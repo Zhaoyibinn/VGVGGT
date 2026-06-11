@@ -5,8 +5,7 @@
 <!-- <a href="https://jytime.github.io/data/VGGT_CVPR25.pdf" target="_blank" rel="noopener noreferrer">
   <img src="https://img.shields.io/badge/Paper-VGGT" alt="Paper PDF">
 </a> -->
-<a href="https://arxiv.org/abs/2606.01573"><img src="https://img.shields.io/badge/arXiv-2606.01573-red?logo=arxiv
-" alt="arXiv"></a>
+<a href="https://arxiv.org/abs/2606.01573"><img src="https://img.shields.io/badge/arXiv-2606.01573-red?logo=arxiv" alt="arXiv"></a>
 <!-- <a href="https://vgg-t.github.io/"><img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page"></a>
 <a href='https://huggingface.co/spaces/facebook/vggt'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Demo-blue'></a> -->
 
@@ -33,7 +32,6 @@
 ## Overview
 
 $\text{VG}^2\text{GT}$ (Voxel-Gaussian Splatting Visual Geometry Grounded Transformer) is a feed-forward, **non-pixel-aligned** Gaussian splatting reconstruction method that maps images to Gaussian splatting scenes within seconds, demonstrating significant advantages in novel view synthesis (NVS), depth map estimation, and surface reconstruction, while maintaining efficient training and inference costs.
-
 
 ## Environment Setup
 
@@ -73,16 +71,20 @@ pip install . --no-build-isolation
 ### Training Data Download
 Taking the IGGT infinigen dataset as an example, all training data should be placed under the `train_data` folder. The default data structure is `train_data/iggt/processed_infinigen/extracted/******`, where each scene is stored in its own subdirectory.
 
-<a href="https://huggingface.co/datasets/lifuguan/InsScene-15K"><img src="https://img.shields.io/badge/DataIGGT-data?logo=huggingface
-"></a>
+<a href="https://huggingface.co/datasets/lifuguan/InsScene-15K"><img src="https://img.shields.io/badge/Data-IGGT-blue?logo=huggingface" alt="Data IGGT"></a>
 
 ### Pre-trained Weights Download
 We use DA3_Giant_1.1 as the default pre-trained weights. All pre-trained weights should be placed under the `weight` folder. The default structure is `weight/da3/weights_gaint_1.1/model.safetensors`.
 
-<a href="https://huggingface.co/depth-anything/DA3-GIANT-1.1"><img src="https://img.shields.io/badge/PreTrained%20-%20IGGT?logo=huggingface
-"></a>
+<a href="https://huggingface.co/depth-anything/DA3-GIANT-1.1"><img src="https://img.shields.io/badge/PreTrained-IGGT-blue?logo=huggingface" alt="PreTrained IGGT"></a>
 
 ## Model Training
+
+Our model training framework is based on VGGT, with modifications made on top of it.
+
+The model is primarily located under `vggt/models`. By default, we train and perform inference using `vggt/models/depthanything3.py`.
+
+
 The default training configuration file is located at `training/config/demo.yaml`.
 
 You can start training directly:
